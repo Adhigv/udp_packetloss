@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UDP Test Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="title">UDP Test Tool</h1>
+
+<div class="control-panel">
+  <input id="ip" value="127.0.0.1" placeholder="IP address">
+  <input id="pkt" value="512" placeholder="Packet size (bytes)">
+  <input id="rate" value="10" placeholder="Target rate (MB/s)">
+  <input id="dur" value="10" placeholder="Duration (sec)">
+  <button onclick="startTest()">Start Test</button>
+  <div id="status" class="status"></div>
+</div>
+
+<div class="results">
+
+  <div class="card sender">
+    <h2>Sender Results</h2>
+    <p><span>Packets Sent</span><b id="s_pkts"></b></p>
+    <p><span>Bytes Sent</span><b id="s_bytes"></b></p>
+    <p><span>Packet Size</span><b id="s_pkt"></b> bytes</p>
+    <p><span>Target Rate</span><b id="s_rate"></b> MB/s</p>
+    <p><span>Throughput</span><b id="s_tp"></b> MB/s</p>
+  </div>
+
+  <div class="card receiver">
+    <h2>Receiver Results</h2>
+    <p><span>Packets Received</span><b id="r_pkts"></b></p>
+    <p><span>Bytes Received</span><b id="r_bytes"></b></p>
+    <p><span>Latency</span><b id="lat"></b> ms</p>
+    <p><span>Jitter</span><b id="jit"></b> ms</p>
+  </div>
+
+  <div class="card loss">
+    <h2>Packet Loss</h2>
+    <p><span>Absolute Loss</span><b id="loss"></b></p>
+    <p><span>Loss %</span><b id="loss_pct"></b></p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
