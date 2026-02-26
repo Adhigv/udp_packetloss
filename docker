@@ -1,5 +1,0 @@
-FROM golang:1.22-alpine
-WORKDIR /full
-COPY . .
-RUN go build -o full
-CMD ["./full"]
